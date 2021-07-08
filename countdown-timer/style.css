@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Festive&family=Poppins:wght@200;600&display=swap');
 
 
 * {
@@ -10,7 +11,7 @@ body {
     min-height: 100vh;
     background-size: cover;
     background-position: center center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Festive', sans-serif;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -20,17 +21,22 @@ body {
 
 h1 {
     font-weight: normal;
+    color: white;
     font-size: 4rem;
     margin-top: 5rem;
 }
 
 
 .countdown-container{
+    color: whitesmoke;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 
 .big-text{
+    color: whitesmoke;
     font-weight: bold;
     font-size: 6rem;
     line-height: 1;
