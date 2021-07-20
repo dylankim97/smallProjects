@@ -45,7 +45,6 @@ const d_text = document.getElementById('d_text');
 const submitBtn = document.getElementById('submit');
 var answerE1s = document.querySelectorAll(".answers");
 
-
 let currentQuiz = 0;
 let score = 0;
 
@@ -82,15 +81,12 @@ function getSelected() {
     var answer = undefined;
     
     for (const E1 of answerE1s) {
-
         if(E1.checked) {
             answer = E1.id;
         }
     }
 
     return answer;
-
-
 }
 
 function deselectAnswer() {
