@@ -43,13 +43,16 @@ const b_text = document.getElementById('b_text');
 const c_text = document.getElementById('c_text');
 const d_text = document.getElementById('d_text');
 const submitBtn = document.getElementById('submit');
+var answerE1s = document.querySelectorAll(".answers");
+
 
 let currentQuiz = 0;
-let answer = undefined;
+let score = 0;
 
 loadQuiz();
 
 function loadQuiz() {
+    deselectAnswer();
     const currentQuizData = quizData
     [currentQuiz];
     questionE1.innerHTML = currentQuizData.question;
@@ -61,28 +64,39 @@ function loadQuiz() {
 }
 
 submitBtn.addEventListener('click', () => {
-    currentQuiz++;
 
-    getSelected();
-    /*
-    if(currentQuiz < quizData.length) {
-        loadQuiz();
-    } else {
-        //TODO: show results
-        alert('You finished!')
+    const answer = getSelected();
+
+    if (answer) {
+        currentQuiz++;
+        if(currentQuiz < quizData.length) {
+            loadQuiz();
+        } else {
+            //TODO: show results
+            alert('You finished!')
+        }
     }
-    */
-
-
 })
 
 function getSelected() {
-    const answerE1s = document.querySelectorAll(".answer");
+    var answer = undefined;
+    
+    for (const E1 of answerE1s) {
 
-
-    answerE1s.forEach((answerE1) => {
-        if(answerE1.checked) {
-            answer = answerE1.id;
+        if(E1.checked) {
+            answer = E1.id;
         }
-    });
+    }
+
+    return answer;
+
+
 }
+
+function deselectAnswer() {
+    answerE1s.forEach((answerE1) => {
+        answerE1.checked = false;
+    })
+}
+
+
