@@ -63,9 +63,7 @@ function loadQuiz() {
 }
 
 submitBtn.addEventListener('click', () => {
-
     const answer = getSelected();
-
     if (answer) {
         currentQuiz++;
         if(currentQuiz < quizData.length) {
@@ -79,13 +77,11 @@ submitBtn.addEventListener('click', () => {
 
 function getSelected() {
     var answer = undefined;
-    
     for (const E1 of answerE1s) {
         if(E1.checked) {
             answer = E1.id;
         }
     }
-
     return answer;
 }
 
